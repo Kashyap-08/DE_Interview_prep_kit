@@ -1,0 +1,39 @@
+* dbt init => it automatically creates project with all the files.
+* dbt debug => it looks for all the connection, also checks for profile.yml file.
+* dbt compile => it will comple and check if there are any error in the models.
+* dbt run => it will run all the dbt models.
+	* dbt run command will check the database connection in profil.yml file.
+
+* dbt and database are connected through profile.yml file. when dbt is initialized the dbt_project.yml file will look for profile.yml file. 
+* profile.yml file contain connection info to the database
+
+
+DOCUMENTATION:
+* DBT also helps in documentation part.
+* YOu need to create "schema.yml" file. with the model name and description.
+* the file name should be specific as above
+
+
+* Docs Blocks
+	* "docs_block.md" file is used to generate docs dock blocks.
+	* NOTE: THe name should be very specific.
+
+
+TESTS in  DBT
+===============
+create sql file in /test folder and write your test there
+there is also option to change the severity of the checks. {{ config(severity = 'warn') }}
+
+
+GENERIC TEST
+============
+There are several generic test available in DBT
+you can use the generic test in "schema.yml" file
+we can also create our own generic test
+
+WE can also store the test cases or logs in the table format
+for that add configurations in dbt_project.yml file
+
+PROD ENV:
+=========
+we can aloss create prod DB and toggle bitween them by using "--target" while running and compiling the sql queries
